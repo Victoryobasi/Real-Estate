@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residence|Realty</title>
+    <style>
+       *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    @font-face {
+    font-family: Manrope;
+    src: url(fonts/Manrope-VariableFont_wght.ttf);
+}
+body{
+    font-family: "Manrope", sans-serif;
+}
+
+       main{
+        display: flex;
+        flex-direction: column;
+    }
+
+       header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px;
+        height: 5rem;
+        background-color: black;
+        align-items: center;
+        color: white;
+        position: fixed;
+        z-index: 50;
+        /* margin-top: 30px; */
+
+    }
+
+       .logo{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+       .logo img{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+       }
+
+       .brand-name{
+        border-left: 2px solid;
+        padding-left: 4px;
+    }
+
+       .nav-links{
+        display: flex;
+        gap: 100px;
+        list-style: none;
+    }
+
+    .nav-links a{
+        text-decoration: none;
+        color: white;
+        font-size: 19px;
+        font-weight: 400;
+    }
+    
+    #about0{
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        font-size: 30px;
+        font-weight: 900;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* z-index: 0; */
+    }
+    input{
+        border: 1px solid white;
+        /* background-color: red; */
+        height: 4.5rem;
+        width: 31rem;
+        border-radius: 10px;
+        outline: none;
+        font-size: 20px;
+    }
+
+    input:hover{
+       border-color: rgb(9, 22, 209);
+    }
+    input::placeholder{
+        font-size: 19px;
+        padding-left: 20px;
+    }
+
+    .Agents{
+        font-size: 50px;
+        font-weight: 80%;
+    }
+    .profile{
+        /* position: relative; */
+        margin-top: 80px;
+        z-index: 10;
+    }
+    .profile img{
+        width: 100%;
+    }
+
+    .log{
+        height: 27rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 24px;
+    }
+    .log span{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .log img{
+        width: 400px;
+    }
+    .log img:hover{
+        width: 401px;
+        cursor: pointer;
+    }
+    .singup{
+        text-decoration: none;
+        text-align: center;
+        height: 3rem;
+        width: 6.5rem;
+        margin: 0px auto;
+        align-content: center;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid blue;
+        color: blue;
+        font-weight: 530
+    }
+    .singup1{
+        border: 1px solid blue;
+        height: 2.5rem;
+        align-content: center;
+        width: 5rem;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        color: blue;
+        font-size: 17px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+    .singup1:hover{
+        color: rgb(180, 180, 202);
+    }
+    .singup:hover{
+        width: 6.7rem;
+    }
+
+    .activities{
+        background-color: rgb(247,247,247);
+        height: 35rem;
+        display: flex;
+        padding-left: 50px;
+        padding-right: 50px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .activities span{
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .activities span p:nth-child(2){
+       font-size: 28px;
+       font-weight: 900;
+    }
+    .Browse-a{
+        border: 1px solid blue;
+        width: 10rem;
+        height: 3rem;
+        align-content: center;
+        border-radius: 8px;
+        color: blue;
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .Browse-a a{
+        text-decoration: none;
+    }
+    .buy{
+        width: 25rem;
+        height: 31rem;
+        background-color: white;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 30px;
+        font-size: 19px;
+        gap: 10px;
+        gap: 55px;
+    }
+    .activities span img{
+        width: 45%;
+    }
+
+    #about{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin: 0px auto;
+        font-size: 19px;
+        height: 15rem;
+        align-items: center;
+        color: rgb(238, 69, 3);
+    }
+    .aboutus{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 30%;
+        padding: 10px;
+        height: 10rem;
+        margin: 0px auto;
+    }
+    .aboutus p:nth-child(1){
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .aced{
+        text-align: center;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 10px;
+    }
+    .contact{
+        text-align: center;
+        font-size: 19px;
+    }
+    footer {
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .whatsapp img{
+            width: 60px;
+        }
+        .whatsapp{
+            position: fixed;
+            top: 84%;
+            right: 2%;
+            animation: forwards;
+            display: inline-block;
+        }
+        .whatsapp-icon{
+            width: 100px; /* Adjust size as needed */
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            100%, 100% {
+            transform: translateY(0);
+        }
+            50% {
+            transform: translateY(-20px);
+        }
+    }
+    @media (max-width: 768px) {
+      .activities{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+      }
+        
+    }
+
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <span class="logo">
+                <img src="logo-search-grid-1x.png" alt="">
+                <span class="brand-name">
+                    <p>Residence</p>
+                    <p>Realty</p>
+                </span>
+            </span>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/indexhome.html" >Buy</a></li>
+                <li><a href="">Rent</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+            <a href="/indexlogin.html" class="singup1">Sign up</a>
+        </header>
+        <div class="profile">
+            <img src="/imga/image2-xl@1x.jpg" alt="">
+            <div id="about0"> 
+                <span>
+                    <h1 class="Agents">Agents. Tours.</h1>
+                    <h1 class="Agents">Loans. Homes.</h1>
+                </span>
+                <input type="text" placeholder="Enter your Address">
+            </div>
+        </div>
+        <div class="log">
+            <span>
+                <p>Get home recommendations</p>
+                <p>Sign in for a more personalized experience.</p>
+                <a class="singup" href="/indexlogin.html">Sign up</a>
+            </span>
+           <img src="imga/a03d28d86d858234534306b63a6de3b2.jpg" alt="">
+        </div>
+        <div class="activities">
+            <span class="buy">
+                <span>
+                    <img src="imga/homepage-spot-agent-lg.jpg" alt="">
+                    <p>Buy a home</p>
+                    <p>Find your place with an immersive photo experience and the most listings, including things you won’t find anywhere else.</p>
+                </span>
+                <div class="Browse-a">
+                    <a href="/indexhome.html">Homes</a>
+                </div>
+            </span>
+            <span class="buy">
+                <span>
+                    <img src="imga/homepage-spot-sell-lg.jpg" alt="">
+                    <p>Sell a home</p>
+                    <p>Sell a home No matter what path you take to sell your home, we can help you navigate a successful sale.</p>
+                </span>
+                <span class="Browse-a" id="Browse">
+                    <a href="tel:234-916-026-2139"> options</a>
+                </span>
+            </span>
+            <span class="buy">
+                <span>
+                    <img src="imga/homepage-spot-rent-lg.jpg" alt="">
+                    <p>Rent a home</p>
+                    <p>We’re creating a seamless online experience – from shopping on the largest rental network, to applying, to paying rent.</p>
+                </span>
+                <span class="Browse-a">
+                    <a href="">Find rentals</a>
+                </span>
+            </span>
+        </div>
+        <p class="aced">About Us</p>
+        <div id="about">
+            
+            <span class="aboutus">
+                <p>specialization </p>
+                <p>We specialize in buying and selling quality homes, matching dreams with reality. Let us help you find your perfect property!</p>
+            </span>
+            <span class="aboutus">
+                <p>Our Values</p>
+                <p>We believe in honesty, integrity, and transparency in all our dealings. We are committed
+                    to delivering exceptional results that exceed our clients' expectations.</p>
+            </span>
+            <span class="aboutus">
+                <p>Recommendations</p>
+                <p>we have been recommended by our clients for our professionalism, expertise, and dedication to their needs.</p>
+            </span>  
+        </div>
+        <div>
+            <p class="aced" id="contact">Contact Us</p>
+            <p class="contact">Get in touch with us today to learn more about our services and how we can
+                    help you achieve your real estate goals.</p>
+                    <span>
+                        <p class="contact">Email: <a href="mailto:Victotyoguchiluruobasi@gmail.com">Victotyoguchiluruobasi@gmail.com</a></p>
+                            <p class="contact">Phone: <a href="tel:234-916-026-2139">+234-916-026-2139</a></p>
+                                <p class="contact">Address: <a href="https://www.google.com/maps/place">Kubwa,Abuja Nigeria</a></p>
+
+                    </span>
+        </div>
+        <div class="whatsapp">
+            <a href="tel:234-916-026-2139"><img src="./imga/whatsapp_icon-removebg-preview.png" alt="" class="whatsapp-icon"></a>
+        </div>
+        <footer>
+             <p>&copy; 2024 Dream Homes. All Rights Reserved.</p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

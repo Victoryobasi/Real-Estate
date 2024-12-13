@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./image/download__2_-removebg-preview.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 50px auto;
+    background-image: url(./image2-xl@1x.jpg);
+    background-size: cover;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.brand h1{
+    font-size: 48px;
+    font-weight: 900;
+    color: crimson;
+}
+.brand p{
+    border: 1px solid rgb(59, 59, 190);
+    width: 37rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: rgb(48, 43, 43);
+}
+.brand p img{
+    width: 36.5px;
+    
+}
+.img{
+    background-color: red;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: hsl(0, 0%, 100%);
+    height: fit-content;
+    width: 24rem;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+.details h4{
+    font-size: 24px;
+}
+.vta{
+    color: crimson;
+    font-weight: 800;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+.instrustion{
+    height: 35px;
+    align-content: center;
+    font-size: 19px;
+    border: 1px solid rgb(59, 59, 190);
+    color: rgb(48, 43, 43);
+}
+.login input{
+    height: 44px;
+    align-content: center;
+    font-size: 19px;
+    padding: 20px;
+    color: rgb(48, 43, 43);
+    border-radius: 5px;
+}
+.password input{
+    width: 21.5rem;
+}
+input::placeholder{
+    font-size: 16px;
+}
+.log{
+    height: 44px;
+    align-content: center;
+    font-size: 24px;
+    color: white;
+    border-radius: 5px;
+    background-color: rgb(77, 77, 211);
+    cursor: pointer;
+}
+.log:hover{
+    background-color: rgb(53, 53, 165);
+}
+.login h5{
+    font-size: 18px;
+    color: rgb(95, 95, 233);
+    cursor: pointer;
+}
+.login h5:hover{
+    text-decoration: underline;
+}
+.or{
+    font-size: 17px;
+    border-right: 1px solid;
+}
+.createaccount{
+    font-size: 19px;
+}
+
+.createaccount a{
+    /* text-decoration: none; */
+    font-size: 22px;
+}
+.createaccount a:hover{
+    text-decoration: underline;
+}
+.comfirm{
+    border: 2px solid green;
+}
+.error{
+    border: 2px solid red;
+}
+.erroremail{
+    border: 2px solid red;
+}
+.t{
+    color: black;
+}
+.brandlogo{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+ .logo{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+       justify-content: center;
+       font-size: 19px
+    }
+
+       .logo img{
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+       }
+
+       .brand-name{
+        display: flex;
+        flex-direction: column;
+        border-left: 2px solid;
+        padding-left: 4px;
+        text-align: left;
+    }
+    .orpart{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .line{
+        font-size: 28px;
+        font-weight: 900;
+        
+    }
+    .orletter{
+        font-size: 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="login">
+            <div  class="logo">
+                 <img src="./logo-search-grid-1x.png" alt="">
+                <span class="brand-name">
+                    <p>Residence</p>
+                    <p>Realty</p>   
+                </span>
+            </div>
+            <div class="details">
+                <!-- <h4>Log in to <span class="vta">V T A</span></h4> -->
+                <span class="login" id="loginForm">
+                    <!-- <p class="instrustion">You must log in to continue.</p> -->
+                    <input type="text" placeholder="Email address or phone number" id="emailOrPhone">
+                    <span class="password">
+                        <input type="password" placeholder="Password" id="password">
+                    </span>
+                    <p id="message"></p>
+                    
+                    <p class="log" id="vaildateButton">Log in</p>
+                </span>
+                <h5 onclick="goBackToForgetPassword()">Forgotten account?</h5>
+                <h5><a href="/index.html">Already have an account</a></h5>
+                <div class="orpart"><span class="line">———— </span><span class="orletter"> Or</span><span class="line"> ————</span></div>
+                <p class="createaccount">don't have an account? <a href="/indexsign.html"><span>Sign up</span></a></p>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input.error {
+    border-color: red;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div id="registerPage">
+        <h2>Create an Account</h2>
+        <form id="registerForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" placeholder="First Name">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" placeholder="Last Name">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Age">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email">
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" placeholder="Phone Number">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Password">
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+            <button type="button" id="registerButton">Register</button>
+        </form>
+    </div>
+
+    <div id="loginPage" style="display: none;">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginEmail">Email or Phone:</label>
+            <input type="text" id="loginEmail" placeholder="Email or Phone">
+
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" placeholder="Password">
+
+            <button type="button" id="loginButton">Login</button>
+        </form>
+        <p><a href="#" id="forgotPasswordLink">Forgot Password?</a></p>
+    </div>
+
+    <div id="welcomePage" style="display: none;">
+        <h2>Welcome, <span id="userName"></span>!</h2>
+        <button type="button" id="logoutButton">Logout</button>
+    </div>
+
+    <div id="forgotPasswordPage" style="display: none;">
+        <h2>Recover Your Password</h2>
+        <form id="forgotPasswordForm">
+            <label for="recoverEmail">Email or Phone:</label>
+            <input type="text" id="recoverEmail" placeholder="Email or Phone">
+
+            <button type="button" id="recoverButton">Recover</button>
+        </form>
+    </div>
+
+    <script>
+        // In-memory storage
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+// Helper functions
+const getElement = (id) => document.getElementById(id);
+
+function validateInput(id, condition, errorMessage) {
+    const element = getElement(id);
+    if (!condition) {
+        element.classList.add("error");
+        element.placeholder = errorMessage;
+        return false;
+    }
+    element.classList.remove("error");
+    return true;
+}
+
+function generateUsername(firstName, lastName) {
+    return `${firstName.toLowerCase()}${lastName.toLowerCase()}${Math.floor(Math.random() * 1000)}`;
+}
+
+// Registration
+getElement("registerButton").addEventListener("click", () => {
+    const firstName = getElement("firstName").value.trim();
+    const lastName = getElement("lastName").value.trim();
+    const dob = getElement("dob").value;
+    const age = getElement("age").value.trim();
+    const email = getElement("email").value.trim();
+    const phone = getElement("phone").value.trim();
+    const password = getElement("password").value;
+    const confirmPassword = getElement("confirmPassword").value;
+
+    const valid = [
+        validateInput("firstName", firstName !== "", "First name is required"),
+        validateInput("lastName", lastName !== "", "Last name is required"),
+        validateInput("dob", dob !== "", "Date of birth is required"),
+        validateInput("age", age !== "" && Number(age) > 0, "Valid age is required"),
+        validateInput("email", email !== "", "Email is required"),
+        validateInput("phone", phone !== "", "Phone number is required"),
+        validateInput("password", password !== "", "Password is required"),
+        validateInput("confirmPassword", password === confirmPassword, "Passwords must match")
+    ];
+
+    if (!valid.every(Boolean)) return;
+
+    const existingUser = users.find((user) => user.email === email && user.phone === phone);
+    if (existingUser) {
+        alert("Account already exists with this email or phone. Create a new account with different details.");
+        return;
+    }
+
+    const username = generateUsername(firstName, lastName);
+    users.push({ firstName, lastName, dob, age, email, phone, password, username });
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Account created successfully! You can now log in.");
+    location.reload();
+});
+
+// Login
+getElement("loginButton").addEventListener("click", () => {
+    const emailOrPhone = getElement("loginEmail").value.trim();
+    const password = getElement("loginPassword").value;
+
+    const user = users.find(
+        (u) => (u.email === emailOrPhone || u.phone === emailOrPhone) && u.password === password
+    );
+
+    if (!user) {
+        validateInput("loginEmail", false, "Invalid email or phone");
+        validateInput("loginPassword", false, "Incorrect password");
+        return;
+    }
+
+    getElement("userName").textContent = user.firstName;
+    getElement("loginPage").style.display = "none";
+    getElement("welcomePage").style.display = "block";
+});
+
+// Logout
+getElement("logoutButton").addEventListener("click", () => {
+    getElement("welcomePage").style.display = "none";
+    getElement("loginPage").style.display = "block";
+});
+
+// Forgot Password
+getElement("forgotPasswordLink").addEventListener("click", () => {
+    getElement("loginPage").style.display = "none";
+    getElement("forgotPasswordPage").style.display = "block";
+});
+
+getElement("recoverButton").addEventListener("click", () => {
+    const emailOrPhone = getElement("recoverEmail").value.trim();
+    const user = users.find((u) => u.email === emailOrPhone || u.phone === emailOrPhone);
+
+    if (!user) {
+        validateInput("recoverEmail", false, "Account not found");
+        return;
+    }
+
+    alert(`Account found. Your username is: ${user.username}`);
+    location.reload();
+});
+
+    </script>
+</body>
+</html>

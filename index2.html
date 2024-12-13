@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Website</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/* Navbar */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    display: flex;
+   
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    text-align: center;
+    color: #f04f4f;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero input {
+    padding: 10px;
+    width: 60%;
+    margin: 10px 0;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #f04f4f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Featured Properties */
+.featured-properties {
+    text-align: center;
+    padding: 50px 0;
+    background: #f9f9f9;
+}
+
+.property-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.property-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.property-card img {
+    width: 100%;
+    height: 60%;
+    border-radius: 8px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+ .Lagos{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    
+}
+
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+      <h1 class="logo">Vicky Real State Company</h1>
+    <header class="navbar">
+        <div class="container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Find Your Dream Home</h2>
+            <p>Search from thousands of listings across the country.</p>
+            <input type="text" id="search" placeholder="Search for Abuja, Lagos, Imo State, or Anambra">
+            <button onclick="searchProperties()">Search</button>
+        </div>
+    </section>
+    
+        
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section class="featured-properties" id="properties">
+        <div class="container">x
+            <h2>Featured Properties</h2>
+            <div class="property-grid">
+                <div class="property-card">
+                    <img src="images/0a0907fb-4797-47d8-a89a-7fcf5a39036b.jpeg" alt="Property 1">
+                    <h3>Modern Apartment</h3>
+                    <p>2 Bed | 2 Bath | $500,000</p>
+                    <span class="Lagos">
+                            <img src="./img/maps-and-flags.png" alt="" style="width: 15px; ">
+                            <p>Lekki Phase 2, Lagos.</p>
+                    </span>
+                </div>
+                <div class="property-card">
+                    <img src="images/Duplex house.jpeg" alt="Property 2">
+                    <h3>Luxury Villa</h3>
+                    <p>4 Bed | 3 Bath | $1,200,000</p>
+                </div>
+                <div class="property-card">
+                    <img src="images/Modern house exterior design.jpeg" alt="Property 3">
+                    <h3>Cozy Cottage</h3>
+                    <p>3 Bed | 2 Bath | $300,000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Dream Homes. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+
+function searchProperties() {
+    const query = document.getElementById('search').value.trim().toLowerCase();
+    const validLocations = {
+        abuja: 'index3.html',
+        lagos: 'lagos.html',
+        'imo state': 'imo-state.html',
+        anambra: 'anambra.html'
+    };
+
+    if (validLocations[query]) {
+        // Redirect to the corresponding page
+        window.location.href = validLocations[query];
+    } else {
+        alert('Sorry, we only have listings in Abuja, Lagos, Imo State, and Anambra.');
+    }
+}
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .properities{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .location{
+            background-color: aqua;
+            height: 6rem;
+            width: 35rem;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .items{
+            font-size: 18px;
+        }
+
+        .places{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .map{
+            display: flex;
+            justify-content: space-between;
+            width: 9rem;
+            height: 2rem;
+            background-color: blanchedalmond;
+            align-items: center;
+            padding: 4px;
+            border: 1px solid gray;
+            border-radius: 4px;
+        }
+
+        #Search{
+            width: 5.5rem;
+            background-color: black;
+            align-items: center;
+            padding: 4px;
+            border: 1px solid gray;
+            border-radius: 4px;
+            text-align: center;
+            color: white;
+
+        }
+
+        .buliding{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 42rem;
+            /* background-color: brown; */
+        }
+
+        .popular{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .line{
+            font-weight: 900;
+            font-size: 24px;
+        }
+
+        .home{
+            display: flex;
+            justify-content: space-between;
+        }
+        .images{
+            display: flex;
+            justify-content: space-between;
+        }
+        .Lagos{
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="properities">
+        <div class="location">
+            <p class="items">Search for available properities</p>
+            <div class="places">
+                <span class="map">
+                    <p>Location</p>
+                    <img src="./img/maps-and-flags.png" alt="" width="15px" height="15px">
+                </span>
+                <span class="map" id="home">
+                    <p>Property Type</p>
+                    <img src="./img/home.png" alt="" width="15px" height="15px">
+                </span>
+                <span class="map">
+                    <p>Budget</p>
+                    <img src="./img/coin.png" alt="" width="15px" height="15px">
+                </span>
+                <span id="Search">Search New</span>
+            </div>
+        </div>
+        <div class="buliding">
+            <div class="popular">
+                <nav class="line">—</nav>
+                <nav>POPULAR</nav>
+            </div>
+            <span class="home">
+                <p>Our Popular Homes</p>
+                <p>Explore All →</p>
+            </span>
+            <div class="images">
+                <span>
+                    <img src="./img/image.png" alt="" width="220px" height="200px">
+                    <span>
+                        <span class="Lagos">
+                            <img src="./img/maps-and-flags.png" alt="" width="15px" height="15px">
+                            <p>Lekki Phase 2, Lagos.</p>
+                        </span>
+                    </span>
+                </span>
+                <span>
+                    <img src="./img/images build2.jpeg" alt="" width="220px" height="200px">
+                    <span class="Lagos">
+                        <img src="./img/maps-and-flags.png" alt="" width="15px" height="15px">
+                        <p>Lekki Phase 2, Lagos.</p>
+                    </span>
+                </span>
+                <span>
+                    <img src="./img/images 3.jpeg" alt="" width="220px" height="200px">
+                    <span class="Lagos">
+                        <img src="./img/maps-and-flags.png" alt="" width="15px" height="15px">
+                        <p>Lekki Phase 2, Lagos.</p>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<p id="about">We specialize in buying and selling quality homes, matching dreams with reality. Let us help you find your perfect property!</p>
+
+<span class="logo">
+                <img src="./logo-search-grid-1x.png" alt="">
+                <span class="brand-name">
+                    <p>Residence</p>
+                    <p> Realty</p>
+                </span>
+
+
+
+
+                <div class="brand">
+               <span class="brandlogo">
+                <!-- <img src="./image/download__2_-removebg-preview.png" alt="" style="width: 90px; height: 60px;"> -->
+                <h1><span>V</span><span class="t"> T</span><span class="t"> A</span></h1>
+               </span>
+               <p><span class="img"><img src="./image/info_icon.png" alt=""></span><span>You must log in to continue.</span></p>
+            </div>

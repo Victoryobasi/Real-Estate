@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties in Abuja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header.navbar {
+            background-color: #004aad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header.navbar h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .property-list {
+            padding: 40px 20px;
+            text-align: center;
+            
+
+        }
+        
+        #property{
+            animation-name: slideright;
+            animation-duration: 5s;
+        }
+        @keyframes slideright {
+            from {transform: translateX(-100%);}
+        }
+
+        .property-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin: 15px;
+            width: 300px;
+            text-align: left;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #004aad;
+        }
+
+        .property-card h3 {
+            font-size: 20px;
+            color: #004aad;
+            padding: 10px 15px;
+            margin: 0;
+        }
+
+        .property-card p {
+            padding: 0 15px 15px 15px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #004aad;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .whatsapp img{
+            width: 60px;
+        }
+        .whatsapp{
+            position: fixed;
+            top: 84%;
+            right: 2%;
+            animation: forwards;
+            display: inline-block;
+        }
+        .whatsapp-icon{
+            width: 100px; /* Adjust size as needed */
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            100%, 100% {
+            transform: translateY(0);
+        }
+            50% {
+            transform: translateY(-20px);
+        }
+    }
+
+        @media (max-width: 768px) {
+            .property-card {
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Properties Available For Sale In Abuja</h1>
+    </header>
+    <section class="property-list" id="property">
+        <!-- Start of Property Cards -->
+        <div class="property-card">
+            <img src="imga/0a0907fb-4797-47d8-a89a-7fcf5a39036b.jpeg" alt="House in Abuja">
+            <h3>Modern Apartment</h3>
+            <p>3 Bed | 4 Bath | $200,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/Hail the light 🔺 Benefits is available for new members this week 🔺🔻.jpeg" alt="House in Abuja">
+            <h3>Luxury Villa</h3>
+            <p>7 Bed | 8 Bath | $1,200,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/For Sale Swipe 👉👉  through Pictures To See Details__Selling!! 🏠Luxury and tastefully finished 5 B.jpeg" alt="House in Abuja">
+            <h3>Cozy Bungalow</h3>
+            <p>3 Bed | 4 Bath | $250,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/Duplex house.jpeg" alt="House in Abuja">
+            <h3>Urban Townhouse</h3>
+            <p>4 Bed | 5 Bath | $350,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/Modern House Plans, Floor Plans, Designs & ___.jpeg" alt="House in Abuja">
+            <h3>Luxury Penthouse</h3>
+            <p>3 Bed | 4 Bath | $380,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/property showroom-NG on Instagram_ “5 bedroom….jpeg" alt="House in Abuja">
+            <h3>Family Home</h3>
+            <p>4 Bed | 5 Bath | $220,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/home decoret.jpeg" alt="House in Abuja">
+            <h3>Downtown Apartment</h3>
+            <p>4 Bed | 5 Bath | $300,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/Kingspath Property on Instagram_ “LUXURY….jpeg" alt="House in Abuja">
+            <h3>Suburban Villa</h3>
+            <p>5 Bed | 4 Bath | $950,000</p>
+        </div>
+        <div class="property-card">
+            <img src="imga/Modern house exterior design.jpeg" alt="House in Abuja">
+            <h3>Country Retreat</h3>
+            <p>6 Bed | 5 Bath | $1,500,000</p>
+        </div>
+    </section>
+    <div class="whatsapp">
+        <a href="tel:234-916-026-2139"><img src="./imga/whatsapp_icon-removebg-preview.png" alt=""
+                class="whatsapp-icon"></a>
+    </div>
+    <footer>
+        <p>&copy; 2024 Dream Homes. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
