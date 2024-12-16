@@ -21,6 +21,7 @@ body{
        main{
         display: flex;
         flex-direction: column;
+        /* gap: 300px; */
     }
 
        header{
@@ -282,12 +283,65 @@ body{
         }
     }
     @media (max-width: 768px) {
-      .activities{
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+           main{
         display: flex;
         flex-direction: column;
-        gap: 50px;
-      }
-        
+        /* gap: 300px; */
+    }
+     /* .logo{
+        align-items: center;
+        justify-content: center;
+     } */
+        .nav-links{
+            display: none;
+        }
+        .profile{
+            display: flex;
+        }
+        #about0 input{
+            display: none;
+            /* position: absolute; */
+        }
+        .log{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+        .log a{
+            display: none;
+        }
+        .homies{
+            display: none;
+        }
+        .activities{
+            display: flex;
+            flex-direction: column;
+        }
+         #about{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 209%;
+            margin-bottom: 59%;
+         }
+         .aboutus{
+            width: 100%;
+         }
+         .aced{
+            display: none;
+         }
+         /* #rent{
+            display: none;
+         } */
+          .contactus{
+            display: flex;
+            flex-direction: column;
+          }
+         
     }
 
     </style>
@@ -314,7 +368,7 @@ body{
         <div class="profile">
             <img src="/imga/image2-xl@1x.jpg" alt="">
             <div id="about0"> 
-                <span>
+                <span class="homies">
                     <h1 class="Agents">Agents. Tours.</h1>
                     <h1 class="Agents">Loans. Homes.</h1>
                 </span>
@@ -350,7 +404,7 @@ body{
                     <a href="tel:234-916-026-2139"> options</a>
                 </span>
             </span>
-            <span class="buy">
+            <span class="buy" id="rent">
                 <span>
                     <img src="imga/homepage-spot-rent-lg.jpg" alt="">
                     <p>Rent a home</p>
@@ -378,7 +432,7 @@ body{
                 <p>we have been recommended by our clients for our professionalism, expertise, and dedication to their needs.</p>
             </span>  
         </div>
-        <div>
+        <div class="contactus">
             <p class="aced" id="contact">Contact Us</p>
             <p class="contact">Get in touch with us today to learn more about our services and how we can
                     help you achieve your real estate goals.</p>
@@ -390,7 +444,7 @@ body{
                     </span>
         </div>
         <div class="whatsapp">
-            <a href="tel:234-916-026-2139"><img src="./imga/whatsapp_icon-removebg-preview.png" alt="" class="whatsapp-icon"></a>
+            <img src="./imga/whatsapp_icon-removebg-preview.png" alt="" class="whatsapp-icon">
         </div>
         <footer>
              <p>&copy; 2024 Dream Homes. All Rights Reserved.</p>
