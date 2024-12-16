@@ -4,4 +4,4 @@
       const whatsappURL = 'https://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(message);
       window.open(whatsappURL, "_blank"); 
     }
- document.getElementById('whatsapp-icon').addEventListener('click', whatsappText);
+//  document.getElementById('whatsapp-icon').addEventListener('click', whatsappText);
