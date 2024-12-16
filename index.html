@@ -261,6 +261,7 @@ body{
         }
         .whatsapp img{
             width: 60px;
+            cursor: pointer;
         }
         .whatsapp{
             position: fixed;
@@ -343,6 +344,28 @@ body{
           }
          
     }
+    @media (max-width: 1180px) {
+        #about0 input{
+            display: none;
+        }
+        #rent2{
+            display: none;
+        }
+        header{
+            padding: 2px;
+        }
+        .activities{
+            width: 100%;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .log{
+            padding: 10px;
+        }
+        .contactus{
+            padding-top: 50px;
+        }
+    }
 
     </style>
 </head>
@@ -359,7 +382,7 @@ body{
             <ul class="nav-links">
                 <li><a href="/index.html">Home</a></li>
                 <li><a href="/indexhome.html" >Buy</a></li>
-                <li><a href="">Rent</a></li>
+                <li id="rent2"><a href="">Rent</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About Us</a></li>
             </ul>
@@ -443,15 +466,14 @@ body{
 
                     </span>
         </div>
-        <div class="whatsapp">
-            <img src="./imga/whatsapp_icon-removebg-preview.png" alt="" class="whatsapp-icon" onclick="whatsappText()">
-        </div>
+       
         <footer>
              <p>&copy; 2024 Dream Homes. All Rights Reserved.</p>
         </footer>
+        <div class="whatsapp">
+            <img src="./imga/whatsapp_icon-removebg-preview.png" alt="" class="whatsapp-icon" onclick="whatsappText()">
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
-
-
